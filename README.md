@@ -14,6 +14,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `yarn server`
+
+This project uses Express.js as its server.
+You should see output telling you that the server is running and listening on a specific port.
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\

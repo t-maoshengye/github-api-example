@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Repos from './components/Repos';
+import RepoFiles from './components/RepoFiles';
+import RepoFileContent from './components/RepoFileContent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <h1>Github API Example</h1>
+  <Router>
+    <Routes>
+      <Route path="/" element={<Repos />} />
+      <Route path="/repos/:owner/:repo" element={<RepoFiles />} />
+      <Route path="/repos/:owner/:repo/:path/*" element={<RepoFiles />} />
+      <Route path="/repo/file/:owner/:repo/:path" element={<RepoFileContent />} />
+    </Routes>
+  </Router>
+  </>
   );
 }
 
